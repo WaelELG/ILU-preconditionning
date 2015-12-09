@@ -1,0 +1,20 @@
+
+function [A]=ILU0(A)
+
+[n,n]=size(A);
+for k=1:n 
+    for i=k+1:n
+        if (A(i,k)>%eps) then
+            A(i,k)=A(i,k) / A(k,k);
+            else error ('pivot nul');
+        end 
+        
+     for j=k+1:n
+        if (A(j,k)>%eps) then
+           A(i, j) = A(i, j) - A(i, j) * A(k, j);
+           else error ('pivot nul')
+        end
+     end 
+     end   
+end
+endfunction
