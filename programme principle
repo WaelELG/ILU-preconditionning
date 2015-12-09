@@ -1,0 +1,7 @@
+// programme principle //
+
+[A]=mmread('cavity04.mtx');
+B=ILU0(A);
+
+plot(B)
+plot(A,'red')
